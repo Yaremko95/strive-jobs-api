@@ -14,6 +14,12 @@ examplesRouter.get("/", async (req, res, next) => {
         ...(req.query.title && {
           title: { $regex: new RegExp(req.query.title, "i") },
         }),
+        ...(req.query.category && {
+          category: { $regex: new RegExp(req.query.category, "i") },
+        }),
+        ...(req.query.company && {
+          company_name: { $regex: new RegExp(req.query.company, "i") },
+        }),
       },
       query.options.fields
     )
