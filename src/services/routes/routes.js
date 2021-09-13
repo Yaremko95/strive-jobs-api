@@ -7,17 +7,21 @@ const examplesRouter = Router();
 examplesRouter.get("/", async (req, res, next) => {
   try {
     const query = q2m(req.query);
-    console.log(query);
-    const total = await Job.countDocuments(query.criteria);
-    const data = await Job.find(query.criteria, query.options.fields)
+
+    const data = await Job.find(
+      {
+        ...query.criteria,
+        ...(req.query.title && {
+          title: { $regex: new RegExp(req.query.title, "i") },
+        }),
+      },
+      query.options.fields
+    )
       .limit(query.options.limit)
       .skip(query.options.skip)
       .sort(query.options.sort);
     res.send({
-      links: query.links("/jobs", total),
-      total,
       data,
-      pageTotal: Math.ceil(total / query.options.limit),
     });
   } catch (error) {
     console.log(error);
