@@ -1,17 +1,36 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const { Schema, model } = mongoose
+const { Schema, model } = mongoose;
 
-const ExampleSchema = new Schema(
-  {
-  /*   name: {
-      type: String,
-      required: true,
-    }, */
+const Job = new Schema({
+  url: {
+    type: String,
   },
-  {
-    timestamps: true,
-  }
-)
+  title: {
+    type: String,
+  },
+  company_name: {
+    type: String,
+  },
+  category: {
+    type: String,
+  },
 
-export default model("Example", ExampleSchema)
+  job_type: {
+    type: String,
+  },
+  publication_date: {
+    type: Date,
+  },
+  candidate_required_location: {
+    type: String,
+  },
+  salary: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+});
+
+export default model("Jobs", Job);
