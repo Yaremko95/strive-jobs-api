@@ -1,6 +1,6 @@
-# job search API
+# Job Search API
 
-##Examples
+## Examples
 
 https://strive-jobs-api.herokuapp.com/jobs?search=developer
 
