@@ -20,6 +20,12 @@ examplesRouter.get("/", async (req, res, next) => {
         ...(req.query.company && {
           company_name: { $regex: new RegExp(req.query.company, "i") },
         }),
+        ...(req.query.search && {
+          $or: [
+            { title: { $regex: new RegExp(req.query.search, "i") } },
+            { description: { $regex: new RegExp(req.query.search, "i") } },
+          ],
+        }),
       },
       query.options.fields
     )
