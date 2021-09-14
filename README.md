@@ -1,6 +1,13 @@
-# BE-Boilerplate
- express, mongoose
- 
- Do npm install after forking/cloning
- 
- Let me know if you want a basic boilerplate with Typescript!!!
+# job search API
+
+##Examples
+
+https://strive-jobs-api.herokuapp.com/jobs?search=developer
+
+https://strive-jobs-api.herokuapp.com/jobs?limit=10&skip=10
+
+https://strive-jobs-api.herokuapp.com/jobs?title=developer
+
+https://strive-jobs-api.herokuapp.com/jobs?category=writing
+
+https://strive-jobs-api.herokuapp.com/jobs?company=olla
