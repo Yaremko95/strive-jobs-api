@@ -4,6 +4,8 @@
 
 https://strive-jobs-api.herokuapp.com/jobs?search=developer
 
+https://strive-jobs-api.herokuapp.com/jobs/categories
+
 https://strive-jobs-api.herokuapp.com/jobs?limit=10&skip=10
 
 https://strive-jobs-api.herokuapp.com/jobs?title=developer
